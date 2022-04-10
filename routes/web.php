@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/404Error', function() {
+    return abort(404);
+});
+
+Route::get('500Error', function () {
+    return abort(500);
+});
