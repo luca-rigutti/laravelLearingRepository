@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +24,9 @@ Route::get('/404Error', function() {
 Route::get('500Error', function () {
     return abort(500);
 });
+
+Route::get('/date', function () {
+    $Now = now();
+    return $Now;
+});
+
