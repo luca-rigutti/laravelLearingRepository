@@ -19,3 +19,8 @@ services:
           MYSQL_DATABASE: laravel_test
         volumes:
         - "./data:/var/lib/mysql"
+    laravel_test_redis:
+        image: redis:7.0.4-bullseye
+        container_name: laravel_test_redis
+        volumes: 
+            - "./cache:/data"
