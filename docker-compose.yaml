@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+    laravel_test:
+        image: laravel_test_image
+        container_name: laravel_test
+        tty: true
+        build: .
+        ports:
+            - "5050:8000"
+        volumes:
+        - .:/var/www/html
+    laravel_test_database:
+        image: mysql:8.0.30-oracle
+        container_name: laravel_test_database
+        environment:
+          MYSQL_ROOT_PASSWORD: laravel_test
+          MYSQL_USER: laravel_test
+          MYSQL_PASSWORD: laravel_test
+          MYSQL_DATABASE: laravel_test
+        volumes:
+        - "./data:/var/lib/mysql"
